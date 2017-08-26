@@ -1,0 +1,71 @@
+.sr-containter {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  background: linear-gradient(60deg, #3abeff, #2f70ff);
+  >div {
+    height: 100%;
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+  &-left {
+    flex: 0 0 346px;
+    .cup-box {
+      background: #6fc8ff;
+      margin-top: 16px;
+      .top {
+        text-align: center;
+        padding-top: 48px;
+        padding-bottom: 32px;
+      }
+      .bottom {
+        display: flex;
+        justify-content: space-around;
+        height: 266px;
+      }
+      .cup {
+        display: inline-block;
+        background-size: 100%;
+        width: 92px;
+        height: 165px;
+        position: relative;
+        >div {
+         display: flex;
+         flex-direction: column;
+         position: absolute;
+         left: 28px;
+         bottom: 18px;
+         span {
+           color: #fff;
+           font-weight: 300;
+           font-size: 12px;
+           text-align: center;
+           &:nth-child(1) {
+             margin-bottom: 4px;
+           }
+         } 
+        }
+        .frist {
+          left: 35px;
+          bottom: 22px;
+        }
+      }
+      .cup-gold {
+        width: 110px;
+        height: 184px;
+        background: url('../../../images/gold_modal.png') no-repeat;
+      }
+      .cup-silver {
+        background: url('../../../images/silver_modal.png') no-repeat;
+      }
+      .cup-copper {
+        background: url('../../../images/copper_modal.png') no-repeat;
+      }
+    }
+  }
+  &-right {
+    flex: auto;
+  }
+}

@@ -1,0 +1,45 @@
+.sr-list {
+  margin-top: 16px;
+  >ul {
+    margin: 0;
+    padding: 0;
+  }
+  &-item {
+    display: flex;
+    i {
+      width: 62px;
+      height: 50px;
+      display: inline-block;
+      position: absolute;
+      right: 0;
+    }
+    i[role='gold'] {
+      background: url('../../images/gold.png') no-repeat;
+    }
+    i[role='silver'] {
+      background: url('../../images/silver.png') no-repeat;
+    }
+    i[role='copper'] {
+      background: url('../../images/copper.png') no-repeat;
+    }
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+    >div {
+      flex: auto;
+      position: relative;
+      justify-content: space-around;
+      background-color: #6cb3ff;
+      line-height: 50px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 300;
+      text-align: center;
+    }
+    .rank {
+      position: absolute;
+      right: 14px;
+      font-size: 20px;
+    }
+  }
+}
