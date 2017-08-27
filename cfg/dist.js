@@ -14,16 +14,9 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     ...plugins,
-    // new webpack.optimize.UglifyJsPlugin({
-    //   "process.env": { 
-    //     NODE_ENV: JSON.stringify("production") 
-    //   }
-    // }),
-    // new webpack.DefinePlugin({
-    //   "process.env": { 
-    //      NODE_ENV: JSON.stringify("production") 
-    //    }
-    // })
+    new webpack.optimize.UglifyJsPlugin({
+      
+    })
   ],
   output: {
     filename: 'js/[name].js',
@@ -32,7 +25,7 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"]
   },
-  // devtool: 'inline-source-map',
+  devtool: 'source-map',
   // devServer: {
   //   contentBase: './dist',
   //   hot: true

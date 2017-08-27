@@ -7,18 +7,12 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const srcPath = path.join(__dirname, '../src');
 const plugins = utils.getMultiHtml('./src/view/**/*.html')
 const entris = utils.getMultiEntry('./src/containers/**/*.js')
-// console.log(entris, 'entris')
-// console.log(plugins, 'plugins')
 
 module.exports = {
   entry: entris, 
   plugins: [
-    // new CleanWebpackPlugin(['dist']),
     new webpack.HotModuleReplacementPlugin(),
     ...plugins,
-    new webpack.optimize.UglifyJsPlugin({
-      
-    }),
     new webpack.DefinePlugin({
       "process.env": { 
          NODE_ENV: JSON.stringify("production") 
@@ -36,7 +30,14 @@ module.exports = {
   devServer: {
     // contentBase: './dist',
     historyApiFallback: true,
-    hot: true
+    hot: true,
+    open: true,
+    // noInfo: true,
+    // progress: true,
+    // openPage: '/rank.html',
+    stats: {
+      colors: true
+    }
   },
   resolve: {
     alias: {
